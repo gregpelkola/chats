@@ -24,7 +24,8 @@ const Chat = () => {
     });
 
     const { currentUser } = useUserStore();
-    const { chatId, user, isCurrentUserBlocked, isReceiverBlocked } = useChatStore();
+    const { chatId, user, isCurrentUserBlocked, isReceiverBlocked } =
+        useChatStore();
 
     const endRef = useRef(null);
 
