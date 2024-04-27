@@ -1,19 +1,28 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import List from './components/list/List';
-import Chat from './components/chat/Chat';
-import Detail from './components/detail/Detail';
+useEffect(() => {
+  const unSub = onAuthStateChanged(auth, (user) => {
+      fetchUserInfo(user?.uid);
+  });
 
-const App = () => {
-  return (
-    <div className="container">
-      <List/>
-      <Chat/>
-      <Detail/>
-    </div>
-  )
-}
+  return () => {
+      unSub();
+  };
+}, [fetchUserInfo]);
 
-export default App
+if (isLoading) return <div className="loading">Loading...</div>;
+
+return (
+  <div className="container">
+      {currentUser ? (
+          <>
+              <List />
+              {chatId && <Chat />}
+              {chatId && <Detail />}
+          </>
+      ) : (
+          <Login />
+      )}
+      <Notification />
+  </div>
+);
+
+export default App;
