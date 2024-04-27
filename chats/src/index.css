@@ -9,4 +9,15 @@ body {
   background-image: url("/bg.jpg");
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: black;
+}
+
+.container {
+  width: 60vw;
+  height: 90vh;
+  background-color: rgba(17, 25, 40, 0.562);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
 }
