@@ -21,6 +21,7 @@ body {
   backdrop-filter: blur(10px) saturate(180%);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
-  margin-left: -13vw;
+  margin-left: -13vw; 
+  display: flex;
   
 }
